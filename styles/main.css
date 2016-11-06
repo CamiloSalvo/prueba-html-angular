@@ -1,16 +1,52 @@
 body {
-  color: #fff;
-  padding: 20px;
-  background: #444; }
+  padding-top: 20px;
+  background: #222;
+  position: relative; }
 
-.shadow {
-  display: flex;
-  transform: rotate(30deg);
-  box-shadow: 1px 1px 5px #444; }
+h1 {
+  color: white; }
 
-.logo {
-  max-width: 150px;
-  float: left;
-  transition: 1000ms ease; }
-  .logo:hover {
-    transform: rotate(360deg); }
+p {
+  color: #AAA; }
+
+.navbar {
+  border: transparent; }
+
+hr {
+  border-top: 1px solid darkgreen; }
+
+.navbar-default {
+  background: #333;
+  border-color: transparent; }
+
+.navbar-default .navbar-brand {
+  color: white;
+  -webkit-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease; }
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: white;
+  background-color: green; }
+
+.navbar-default .navbar-nav > li > a {
+  color: #AAA;
+  -webkit-transition: all 250ms ease;
+  -o-transition: all 250ms ease;
+  transition: all 250ms ease; }
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: white;
+  background-color: green; }
+
+.row {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
+th {
+  color: white; }
+
+tr {
+  color: #AAA; }
