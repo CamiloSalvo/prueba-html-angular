@@ -6,10 +6,6 @@ app.controller("FestivalesListCtrl", function($scope, FestivalService){
     function getFestivales() {
         FestivalService.getResources().then(function(data) {
             vm.festivales = data.data;
-            console.log('data', data);
-        });
+         });
     }
-
-    console.log('scope', $scope);
-
 });
