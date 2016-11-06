@@ -1,14 +1,32 @@
 var app = angular.module("angularSpa", ["ngRoute"])
+	.constant('MyConfig', {
+		urlBase: 'http://macbook-air-de-matias.local:8080/grupo-1-tbd/'
+	})
+	.service('FestivalService', function($http, MyConfig){
+		var resource = "festivales";
+
+		this.getResource = function(id){
+			return $http.get( MyConfig.urlBase + resource + '/' + id);
+		};
+		this.getResources = function(){
+			return $http.get( MyConfig.urlBase + resource);
+		};
+	})
 	.config(function($routeProvider) {
-		var urlBase = "'http://alter-aspire-vn7-571g:8080/grupo_1_tbd-master/";
 		$routeProvider
 		.when("/home", {
 			templateUrl: "views/main.html",
 			controller: "MainCtrl"
 		})
-		.when("/festivales/:id", {
+		.when("/festivales", {
 			templateUrl: "views/festivales/festivales.html",
+			controllerAs: "vm",
 			controller: "FestivalesListCtrl"
+		})
+		.when("/festivales/:id", {
+			templateUrl: "views/festivales/show.html",
+			controllerAs: "vm",
+			controller: "FestivalesViewCtrl"
 		})
 		.otherwise({
 			redirectTo: "/home"

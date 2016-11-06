@@ -1,3 +1,16 @@
 <div class="container">
 	<h1 class="text-center">Festivales</h1>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Accion</th>
+        </tr>
+        <tr ng-repeat="festival in vm.festivales">
+            <td>{{festival.festivalId}}</td>
+            <td>{{festival.festivalName}}</td>
+            <td></td>
+        </tr>
+    </table>
+    
 </div>
