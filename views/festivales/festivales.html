@@ -9,7 +9,10 @@
         <tr ng-repeat="festival in vm.festivales">
             <td>{{festival.festivalId}}</td>
             <td>{{festival.festivalName}}</td>
-            <td></td>
+            <td>   
+            <a href="#/festivales/{{festival.festivalId}}" class="btn btn-sm btn-info"><i class="fa fa-eye"></i></a>
+
+            </td>
         </tr>
     </table>
     

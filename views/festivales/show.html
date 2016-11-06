@@ -1,7 +1,19 @@
 <div class="container">
-    <table>
+    <table class="table table-bordered">
         <tr>
-            <td>Nombre:</td><td>{{vm.festival.festivalName}}</td>
+            <th>Nombre:</th><td>{{vm.festival.festivalName}}</td>
+        </tr>
+        <tr>
+            <th>Artistas Invitados:</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>Nombre:</th>
+            <th>Nacionalidad:</th>
+        </tr>
+        <tr ng-repeat="artista in vm.artistas">
+            <td>{{artista.artistName}}</td>
+            <td>{{artista.nationality.country}}</td>
         </tr>
     </table>
 </div>

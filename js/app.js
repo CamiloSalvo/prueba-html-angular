@@ -8,6 +8,9 @@ var app = angular.module("angularSpa", ["ngRoute"])
 		this.getResource = function(id){
 			return $http.get( MyConfig.urlBase + resource + '/' + id);
 		};
+		this.getResourceArtist = function(id){
+			return $http.get( MyConfig.urlBase + resource + '/' + id + '/artistas');
+		};
 		this.getResources = function(){
 			return $http.get( MyConfig.urlBase + resource);
 		};
