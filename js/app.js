@@ -6,6 +6,10 @@ var app = angular.module("angularSpa", ["ngRoute"])
 			templateUrl: "views/main.html",
 			controller: "MainCtrl"
 		})
+		.when("/festivales/:id", {
+			templateUrl: "views/festivales/festivales.html",
+			controller: "FestivalesListCtrl"
+		})
 		.otherwise({
 			redirectTo: "/home"
 		});
