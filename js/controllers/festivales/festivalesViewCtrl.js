@@ -1,12 +1,7 @@
 app.controller("FestivalesViewCtrl", function($scope, $routeParams, FestivalService){
     var vm = this;
     vm.festival = {};
-<<<<<<< HEAD
-=======
-
-    vm.artistas = {}
-    console.log($routeParams.id);
->>>>>>> 8f168b48994038d15bb72877e0ff74878a7bf2e5
+    vm.artistas = {};
 
     getFestival();
     getFestivalArtist();

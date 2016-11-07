@@ -1,6 +1,13 @@
 var app = angular.module("angularSpa", ["ngRoute"])
 	.constant('MyConfig', {
-		urlBase: 'http://alter-aspire-vn7-571g:8080/grupo_1_tbd-master/'
+		urlBase: 'http://macbook-air-de-matias.local:8080/grupo-1-tbd/'
+	})
+	.service('TweetService', function($http, MyConfig){
+		var resource = "twitter";
+
+		this.getCount = function(){
+			return $http.get( MyConfig.urlBase + resource + '/indicesContar');
+		};
 	})
 	.service('FestivalService', function($http, MyConfig){
 		var resource = "festivales";
@@ -43,6 +50,16 @@ var app = angular.module("angularSpa", ["ngRoute"])
 			templateUrl: "views/festivales/show.html",
 			controllerAs: "vm",
 			controller: "FestivalesViewCtrl"
+		})
+		.when("/festivales/create", {
+			templateURL: "views/festivales/form.html",
+			controllerAs: "vm",
+			controller: "FestivalesCreateCtr"
+		})
+		.when("/infografias", {
+			templateUrl: "views/infografias/index.html",
+			controllerAs: "vm",
+			controller: "InfografiaListCtrl"
 		})
 		.otherwise({
 			redirectTo: "/home"
