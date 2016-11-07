@@ -1,4 +1,4 @@
-app.controller("ArtistasViewCtrl", function($scope, $routeParams, ArtistService){
+app.controller("ArtistasViewCtrl", function($scope, $routeParams, ArtistaService){
     var vm = this;
     vm.artista = {};
     vm.festivales = {};
@@ -7,13 +7,13 @@ app.controller("ArtistasViewCtrl", function($scope, $routeParams, ArtistService)
     getArtistFestival();
 
     function getArtist() {
-        ArtistService.getResource($routeParams.id).then(function(data) {
+        ArtistaService.getResource($routeParams.id).then(function(data) {
             vm.artista = data.data;
         });
     }
 
     function getArtistFestival() {
-        ArtistService.getResourceArtist($routeParams.id).then(function(data) {
+        ArtistaService.getResourceArtist($routeParams.id).then(function(data) {
             vm.festivales = data.data;
             console.log('data', data);
         });
