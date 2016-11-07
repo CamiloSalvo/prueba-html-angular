@@ -1,6 +1,6 @@
 var app = angular.module("angularSpa", ["ngRoute"])
 	.constant('MyConfig', {
-		urlBase: 'http://macbook-air-de-matias.local:8080/grupo-1-tbd/'
+		urlBase: 'http://alter-aspire-vn7-571g:8080/grupo_1_tbd-master/'
 	})
 	.service('TweetService', function($http, MyConfig){
 		var resource = "twitter";
