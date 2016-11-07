@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <h1 class="text-center"><strong>Artistas</strong></h1>
+        <hr>
+    </div>
+    <div class="row pull-right">
+        <a href="#/artistas/create" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Crear</a>
+    </div>
+    <table class="table table-hover">
+        <tr>
+            <th>Nombre</th>
+            <th>Accion</th>
+        </tr>
+        <tr ng-repeat="artista in vm.artistas">
+            <td>{{artista.artistName}}</td>
+            <td>   
+            <a href="#/artistas/{{artista.artistId}}" class="btn btn-sm btn-info"><i class="fa fa-eye"></i></a>
+            </td>
+        </tr>
+    </table>
+    
+</div>

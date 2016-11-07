@@ -1,0 +1,20 @@
+<div class="container">
+	<h1 class="text-center"><strong>{{vm.artista.artistName}}</strong></h1>
+    <table class="table table-hover">
+        <tr>
+            <th>Nacionalidad:</th><td>{{vm.artista.nationality}}</td>
+        </tr>
+        <tr>
+            <th>Festivales confirmados:</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th>Nombre:</th>
+            <th>FechaInicio:</th>
+        </tr>
+        <tr ng-repeat="festival in vm.festivales">
+            <td>{{festival.festivaltName}}</td>
+            <td>{{festival.endDate}}</td>
+        </tr>
+    </table>
+</div>
