@@ -54,7 +54,7 @@ var app = angular.module("angularSpa", ["ngRoute", "nvd3"])
 		.when("/festivales/create", {
 			templateURL: "views/festivales/form.html",
 			controllerAs: "vm",
-			controller: "FestivalesCreateCtr"
+			controller: "FestivalesCreateCtrl"
 		})
 		.when("/artistas", {
 			templateUrl: "views/artistas/artistas.html",

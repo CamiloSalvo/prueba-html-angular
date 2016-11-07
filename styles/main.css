@@ -51,5 +51,10 @@ th {
 tr {
   color: #AAA; }
 
+.table-hover > tbody > tr:hover,
+.table-hover > tbody > tr:focus {
+  color: white;
+  background: #1e711e; }
+
 #chart svg {
   height: 1000px; }
