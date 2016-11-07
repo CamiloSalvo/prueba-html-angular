@@ -1,4 +1,4 @@
-var app = angular.module("angularSpa", ["ngRoute"])
+var app = angular.module("angularSpa", ["ngRoute", "nvd3"])
 	.constant('MyConfig', {
 		urlBase: 'http://macbook-air-de-matias.local:8080/grupo-1-tbd/'
 	})
