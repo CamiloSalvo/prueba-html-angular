@@ -4,17 +4,20 @@
 .side-nav {
   position: fixed;
   padding-top: 20px;
-  background: black;
+  background: #2a2a2a;
   height: 100%; }
 
 .nav .open > a {
-  background: black;
+  background: #2a2a2a;
   transition: all 0.1s ease 0.1s; }
 
 .nav .open > a:focus,
 .nav .open > a:hover {
   color: white;
-  background: black; }
+  background: #2a2a2a; }
+
+.nav > li > a > .fa {
+  padding-right: 5px; }
 
 .nav > li > a {
   color: white;
@@ -23,5 +26,5 @@
 .nav > li > a:active,
 .nav > li > a:hover,
 .nav > li > a:focus {
-  background-color: black;
+  background-color: #2a2a2a;
   color: green; }
