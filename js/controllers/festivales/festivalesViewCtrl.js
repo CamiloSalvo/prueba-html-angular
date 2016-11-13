@@ -15,7 +15,6 @@ app.controller("FestivalesViewCtrl", function($scope, $routeParams, FestivalServ
     function getFestivalArtist() {
         FestivalService.getResourceArtist($routeParams.id).then(function(data) {
             vm.artistas = data.data;
-            console.log('data', data);
         });
     }
 });

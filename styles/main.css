@@ -1,60 +1,27 @@
-body {
+.content-nav {
+  padding-top: 20px; }
+
+.side-nav {
+  position: fixed;
   padding-top: 20px;
-  background: #222;
-  position: relative; }
+  background: black;
+  height: 100%; }
 
-h1 {
-  color: white; }
+.nav .open > a {
+  background: black;
+  transition: all 0.1s ease 0.1s; }
 
-p {
-  color: #AAA; }
-
-.navbar {
-  border: transparent; }
-
-hr {
-  border-top: 1px solid darkgreen; }
-
-.navbar-default {
-  background: #333;
-  border-color: transparent; }
-
-.navbar-default .navbar-brand {
+.nav .open > a:focus,
+.nav .open > a:hover {
   color: white;
-  -webkit-transition: all 250ms ease;
-  -o-transition: all 250ms ease;
-  transition: all 250ms ease; }
+  background: black; }
 
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus {
+.nav > li > a {
   color: white;
-  background-color: green; }
+  transition: all 0.1s ease 0.1s; }
 
-.navbar-default .navbar-nav > li > a {
-  color: #AAA;
-  -webkit-transition: all 250ms ease;
-  -o-transition: all 250ms ease;
-  transition: all 250ms ease; }
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: white;
-  background-color: green; }
-
-.row {
-  padding-top: 5px;
-  padding-bottom: 5px; }
-
-th {
-  color: white; }
-
-tr {
-  color: #AAA; }
-
-.table-hover > tbody > tr:hover,
-.table-hover > tbody > tr:focus {
-  color: white;
-  background: #1e711e; }
-
-#chart svg {
-  height: 1000px; }
+.nav > li > a:active,
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: black;
+  color: green; }

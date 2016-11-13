@@ -1,23 +1,18 @@
-<div class="container">
-    <div class="row">
-        <h1 class="text-center"><strong>Festivales</strong></h1>
-        <hr>
-    </div>
-    <div class="row pull-right">
-        <a href="#/festivales/create" class="btn btn-sm btn-success"><i class="fa fa-plus"></i> Crear</a>
-    </div>
-    <table class="table table-hover">
-        <tr>
-            <th>Nombre</th>
-            <th>Accion</th>
-        </tr>
-        <tr ng-repeat="festival in vm.festivales">
-            <td>{{festival.festivalName}}</td>
-            <td>   
-            <a href="#/festivales/{{festival.festivalId}}" class="btn btn-sm btn-info"><i class="fa fa-eye"></i></a>
-
-            </td>
-        </tr>
-    </table>
-    
+<h1><strong>Festivales</strong></h1>
+<hr>
+<div class="pull-right">
+    <a href="#/festivales/create" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-plus"></i> Crear</a>
 </div>
+
+<table class="table table-hover">
+    <tr>
+        <th>Nombre</th>
+        <th>Accion</th>
+    </tr>
+    <tr ng-repeat="festival in vm.festivales">
+        <td>{{festival.festivalName}}</td>
+        <td>   
+            <a href="#/festivales/{{festival.festivalId}}" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i></a>
+        </td>
+    </tr>
+</table>

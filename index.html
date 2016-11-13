@@ -3,18 +3,55 @@
 <head>
 	<meta charset="utf-8">
 	<title>Prueba</title>
+
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles/nv.d3.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.4/nv.d3.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
+
+</head>
+
+<body ng-app="angularSpa">
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="col-md-2 side-nav">
+				<nav class="navbar">
+					<ul class="nav"> 
+						<li><a href="#/home"><h3>FestiVer</h3></a></li>
+						<li><a href="#/festivales">Festivales</a></li>
+						<li><a href="#/artistas">Artistas</a></li>
+						<li class="dropdown">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown">
+								Infografías<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#/infografias">Todos</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#/festivales/1">Lollapalooza</a></li>
+								<li><a href="#/festivales/2">Creamfields</a></li>
+								<li><a href="#/festivales/3">La Cumbre del Rock Chileno</a></li>
+							</ul>
+						</li>
+
+					</ul>
+				</nav>	
+			</div>
+
+			<div class="col-md-10 col-md-offset-2 content-nav">
+				<div ng-view=""></div>
+			</div>
+
+		</div>
+	</div>
 
 	<!-- JAVASCRIPT -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.4/nv.d3.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.9/angular-nvd3.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/controllers/mainCtrl.js"></script>
@@ -25,40 +62,6 @@
 	<script type="text/javascript" src="js/controllers/artistas/artistasViewCtrl.js"></script>
 	<script type="text/javascript" src="js/controllers/artistas/artistasCreateCtrl.js"></script>
 	<script type="text/javascript" src="js/controllers/infografias/infografiaListCtrl.js"></script>
-
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-
-
-</head>
-
-<body ng-app="angularSpa">
-
-	<header>
-		<div class="container">
-			<nav class="navbar navbar-default">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-bar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#/home">FestiVer</a>
-				</div>
-
-				<div class="collapse navbar-collapse" id="header-bar">
-					<ul class="nav navbar-nav navbar-left">
-						<li><a href="#/festivales">Festivales</a></li>
-						<li><a href="#/artistas">Artistas</a></li>
-						<li><a href="#/infografias">Infografías</a></li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</header>
-
-	<div class="container" id="container">
-		<div ng-view=""></div>
-	</div>
 
 </body>
 
