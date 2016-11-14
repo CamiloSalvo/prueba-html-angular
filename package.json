@@ -1,7 +1,7 @@
 {
   "name": "simple-angular-template",
   "version": "1.0.0",
-  "description": "Taller de BD",
+  "description": "FrontEnd FestiVer",
   "start": 8000,
   "main": "index.js",
   "scripts": {
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dfao/tbd-angular-2-2016.git"
+    "url": "git+https://github.com/CamiloSalvo/prueba-html-angular.git"
   },
   "author": "dfao",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dfao/tbd-angular-2-2016/issues"
+    "url": "https://github.com/CamiloSalvo/prueba-html-angular/issues"
   },
-  "homepage": "https://github.com/dfao/tbd-angular-2-2016#readme",
+  "homepage": "https://github.com/CamiloSalvo/prueba-html-angular#readme",
   "devDependencies": {
     "concurrently": "^3.0.0",
     "node-sass": "^3.10.0",
