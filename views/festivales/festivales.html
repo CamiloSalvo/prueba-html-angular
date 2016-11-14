@@ -1,18 +1,29 @@
-<h1><strong>Festivales</strong></h1>
+<h1>
+    <strong>Festivales</strong>
+    
+    <div class="pull-right">
+        <a href="#/festivales/create" class="btn btn-sm btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
+    </div>
+
+</h1>
+
 <hr>
-<div class="pull-right">
-    <a href="#/festivales/create" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-plus"></i> Crear</a>
-</div>
 
 <table class="table table-hover">
-    <tr>
-        <th>Nombre</th>
-        <th>Accion</th>
-    </tr>
-    <tr ng-repeat="festival in vm.festivales">
-        <td>{{festival.festivalName}}</td>
-        <td>   
-            <a href="#/festivales/{{festival.festivalId}}" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i></a>
-        </td>
-    </tr>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th><i class="fa fa-calendar-check-o" aria-hidden="true"></i></th>
+            <th><i class="fa fa-map-marker" aria-hidden="true"></i></th>
+            <th>Ver</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="festival in vm.festivales">
+            <td>{{festival.festivalName}}</td>
+            <td>20 de Mayo 2017</td>
+            <td>Parque O'Higgins</td>
+            <td><a href="#/festivales/{{festival.festivalId}}" class="btn btn-xs btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+        </tr>
+    </tbody>
 </table>

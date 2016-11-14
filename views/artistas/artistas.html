@@ -1,9 +1,30 @@
-<h1><strong>Artistas</strong></h1>
+<h1>
+    <strong>Artistas</strong>
+
+    <div class="pull-right">
+        <a href="#artistas/create" class="btn btn-sm btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Agregar</a>
+    </div>
+
+</h1>
+
 <hr>
 
-<div class="pull-right">
-    <a href="#/artistas/create" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-plus"></i> Crear</a>
-</div>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th><i class="fa fa-flag" aria-hidden="true"></i></th>
+            <th>Ver</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="artista in vm.artistas">
+            <td>{{artista.artistName}}</td>
+            <td>Chile</td>
+            <td><a href="#/artistas/{{artista.artistId}}" class="btn btn-xs btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+        </tr>
+    </tbody>
+</table>
 
 
 <table class="table table-hover">
