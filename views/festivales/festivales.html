@@ -9,7 +9,12 @@
 
 <hr>
 
-<table class="table table-hover">
+<h2 class="text-center" ng-hide="vm.dataLoaded">
+    <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+</h2>
+
+<table class="table table-hover" ng-show="vm.dataLoaded">
     <thead>
         <tr>
             <th>Nombre</th>

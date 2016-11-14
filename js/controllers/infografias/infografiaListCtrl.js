@@ -1,6 +1,7 @@
 app.controller("InfografiaListCtrl", function($scope, TweetService){
     var vm = this;
     vm.datos = 0;
+    vm.dataLoaded = false;
     vm.options = {
         chart: {
             type: 'pieChart',
@@ -26,7 +27,7 @@ app.controller("InfografiaListCtrl", function($scope, TweetService){
     function getCount() {
         TweetService.getCount().then(function(data) {
             vm.datos = data.data;
-            console.log(data);
+            vm.dataLoaded = true;
          });
     }
 });

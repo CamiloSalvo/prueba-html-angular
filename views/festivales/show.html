@@ -1,11 +1,27 @@
 <h1 class="text-center"><strong>{{vm.festival.festivalName}}</strong></h1>
 
+<hr>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th><i class="fa fa-flag" aria-hidden="true"></i></th>
+            <th><i class="fa fa-play" aria-hidden="true"></i></th>
+            <th>Ver</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+
 <table class="table table-hover">
     <tr>
-        <th>Fecha Inicio:</th><td>{{vm.festival.startDate}}</td><td></td>
+        <th>Fecha Inicio:</th><td>{{vm.festival.startDate | date: 'd'}} de {{vm.festival.startDate | date: 'MMMM'}} de {{vm.festival.startDate | date: 'y'}}</td><td></td>
     </tr>
     <tr>
-        <th>Fecha Termino:</th><td>{{vm.festival.endDate}}</td><td></td>
+        <th>Fecha Termino:</th><td>{{vm.festival.endDate | date: 'd'}} de {{vm.festival.startDate | date: 'MMMM'}} de {{vm.festival.startDate | date: 'y'}}</td><td></td>
     </tr>
     <tr>
         <th colspan="3"><center><h4><b>Artistas Invitados</b><h4></center></th>

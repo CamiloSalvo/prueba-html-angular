@@ -9,7 +9,12 @@
 
 <hr>
 
-<table class="table table-hover">
+<h2 class="text-center" ng-hide="vm.dataLoaded">
+    <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+</h2>
+
+<table class="table table-hover" ng-show="vm.dataLoaded">
     <thead>
         <tr>
             <th>Nombre</th>
@@ -24,18 +29,4 @@
             <td><a href="#/artistas/{{artista.artistId}}" class="btn btn-xs btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
         </tr>
     </tbody>
-</table>
-
-
-<table class="table table-hover">
-    <tr>
-        <th>Nombre</th>
-        <th>Accion</th>
-    </tr>
-    <tr ng-repeat="artista in vm.artistas">
-        <td>{{artista.artistName}}</td>
-        <td>   
-            <a href="#/artistas/{{artista.artistId}}" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i></a>
-        </td>
-    </tr>
 </table>

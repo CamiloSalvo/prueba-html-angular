@@ -5,6 +5,7 @@ app.controller("FestivalesViewCtrl", function($scope, $routeParams, FestivalServ
 
     getFestival();
     getFestivalArtist();
+    
 
     function getFestival() {
         FestivalService.getResource($routeParams.id).then(function(data) {
