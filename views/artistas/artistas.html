@@ -25,7 +25,7 @@
     <tbody>
         <tr ng-repeat="artista in vm.artistas">
             <td>{{artista.artistName}}</td>
-            <td>Chile</td>
+            <td>{{artista.nationality.country}}</td>
             <td><a href="#/artistas/{{artista.artistId}}" class="btn btn-xs btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
         </tr>
     </tbody>

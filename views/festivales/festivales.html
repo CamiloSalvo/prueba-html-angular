@@ -26,7 +26,7 @@
     <tbody>
         <tr ng-repeat="festival in vm.festivales">
             <td>{{festival.festivalName}}</td>
-            <td>20 de Mayo 2017</td>
+            <td>{{festival.startDate | date: 'd'}} de {{festival.startDate | date: 'MMMM'}} de {{festival.startDate | date: 'y'}}</td>
             <td>Parque O'Higgins</td>
             <td><a href="#/festivales/{{festival.festivalId}}" class="btn btn-xs btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
         </tr>
