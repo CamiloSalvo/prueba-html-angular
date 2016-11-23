@@ -1,12 +1,6 @@
 app.controller("InfografiaListCtrl", function(informacion, $scope, TweetService){
     var vm = this;
-    vm.datos2 = informacion;
-    vm.opcionesSelect = [
-        {id:'Linea', nombre:'Gráfico de Lineas'},
-        {id:'PieChart', nombre: 'Gráfico de Torta'}
-    ];
-    console.log('data', informacion);
-
+    vm.datos = informacion;
     vm.options = {
       chart: {
         type: "lineChart",
