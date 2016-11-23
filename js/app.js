@@ -1,4 +1,6 @@
-var app = angular.module("angularSpa", ["ngRoute", "nvd3", "ui.select", "ui.bootstrap"])
+var app = angular.module("angularSpa", [
+	"ngRoute", "nvd3", "ui.select", "ui.bootstrap", "n3-line-chart"
+	])
 	.constant('MyConfig', {
 		urlBase: 'http://localhost:8080/grupo-1-tbd/'
 	})
@@ -7,6 +9,9 @@ var app = angular.module("angularSpa", ["ngRoute", "nvd3", "ui.select", "ui.boot
 
 		this.getCount = function(){
 			return $http.get( MyConfig.urlBase + resource + '/indicesContar');
+		};
+		this.getFechas = function(fechaInicio, fechaFin){
+			return $http.get( MyConfig.urlBase + resource + '/indices/' + fechaInicio + '/hasta/' + fechaFin);
 		};
 	})
 	.service('FestivalService', function($http, MyConfig){
@@ -20,6 +25,12 @@ var app = angular.module("angularSpa", ["ngRoute", "nvd3", "ui.select", "ui.boot
 		};
 		this.getResources = function(){
 			return $http.get( MyConfig.urlBase + resource);
+		};
+		this.createResource = function(data){
+			return $http.post( MyConfig.urlBase + resources, data);
+		};
+		this.updateResources = function(id,data){
+			return $http.put( MyConfig.url + resoources + '/' + id, data);
 		};
 	})
 	.service('ArtistaService', function($http, MyConfig){
@@ -46,15 +57,15 @@ var app = angular.module("angularSpa", ["ngRoute", "nvd3", "ui.select", "ui.boot
 			controllerAs: "vm",
 			controller: "FestivalesListCtrl"
 		})
+		.when("/festivales/create", {
+			templateUrl: "views/festivales/form.html",
+			controllerAs: "vm",
+			controller: "FestivalesCreateCtrl"
+		})
 		.when("/festivales/:id", {
 			templateUrl: "views/festivales/show.html",
 			controllerAs: "vm",
 			controller: "FestivalesViewCtrl"
-		})
-		.when("/festivales/create", {
-			templateURL: "views/festivales/form.html",
-			controllerAs: "vm",
-			controller: "FestivalesCreateCtrl"
 		})
 		.when("/artistas", {
 			templateUrl: "views/artistas/artistas.html",
@@ -67,14 +78,21 @@ var app = angular.module("angularSpa", ["ngRoute", "nvd3", "ui.select", "ui.boot
 			controller: "ArtistasViewCtrl"
 		})
 		.when("/artistas/create", {
-			templateURL: "views/artistas/form.html",
+			templateUrl: "views/artistas/form.html",
 			controllerAs: "vm",
 			controller: "ArtistasCreateCtr"
 		})
 		.when("/infografias", {
 			templateUrl: "views/infografias/index.html",
 			controllerAs: "vm",
-			controller: "InfografiaListCtrl"
+			controller: "InfografiaListCtrl",
+			resolve: {
+				informacion: function(TweetService) {
+					return TweetService.getFechas('2016-10-11','2016-10-30').then(function(data) {
+			            return data.data;
+			        });
+				}
+			}
 		})
 		/*
 		.when("/infografias/:id", {

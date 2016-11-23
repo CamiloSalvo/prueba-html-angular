@@ -1,32 +1,40 @@
-app.controller("InfografiaListCtrl", function($scope, TweetService){
+app.controller("InfografiaListCtrl", function(informacion, $scope, TweetService){
     var vm = this;
-    vm.datos = 0;
-    vm.options = {
-        chart: {
-            type: 'pieChart',
-            height: 500,
-            x: function(d){return d.nombre;},
-            y: function(d){return d.contador;},
-            showLabels: true,
-            duration: 500,
-            labelThreshold: 0.05,
-            labelSunbeamLayout: true,
-            legend: {
-                margin: {
-                    top: 5,
-                    right: 35,
-                    bottom: 5,
-                    left: 0
-                }
-            }
-        }
-    };
+    vm.datos2 = informacion;
+    vm.opcionesSelect = [
+        {id:'Linea', nombre:'Gráfico de Lineas'},
+        {id:'PieChart', nombre: 'Gráfico de Torta'}
+    ];
+    console.log('data', informacion);
 
-    getCount();
-    function getCount() {
-        TweetService.getCount().then(function(data) {
-            vm.datos = data.data;
-            console.log(data);
-         });
-    }
+    vm.options = {
+      chart: {
+        type: "lineChart",
+        height: 500,
+        x: function(d){return d3.time.format("%Y-%m-%d").parse(d.fecha);},
+        y: function(d){return d.contador;},
+        margin: {
+          top: 20,
+          right: 20,
+          bottom: 40,
+          left: 55
+        },
+        useInteractiveGuideline: true,
+        dispatch: {},
+        xAxis: {
+          tickFormat: (function(d) {
+          return d3.time.format('%Y-%m-%d')(d)
+          }),
+          axisLabel: "Fechas (Dia)"
+        },
+        xScale: d3.time.scale(),
+        yAxis: {
+          axisLabel: "Cantidad (#)"
+        }
+      },
+      title: {
+        enable: true,
+        text: "Gráfico de Festivales"
+      }
+    };
 });
