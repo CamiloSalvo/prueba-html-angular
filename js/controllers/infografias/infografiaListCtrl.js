@@ -19,6 +19,7 @@ app.controller("InfografiaListCtrl", function(informacion, $scope, TweetService)
           tickFormat: (function(d) {
           return d3.time.format('%Y-%m-%d')(d)
           }),
+          ticks: 5,
           axisLabel: "Fechas (Dia)"
         },
         xScale: d3.time.scale(),

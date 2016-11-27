@@ -1,5 +1,5 @@
 var app = angular.module("angularSpa", [
-	"ngRoute", "nvd3", "ui.select", "ui.bootstrap", "n3-line-chart"
+	"ngRoute", "nvd3", "ui.select", "ui.bootstrap"
 	])
 	.constant('MyConfig', {
 		urlBase: 'http://localhost:8080/grupo-1-tbd/'
@@ -88,19 +88,12 @@ var app = angular.module("angularSpa", [
 			controller: "InfografiaListCtrl",
 			resolve: {
 				informacion: function(TweetService) {
-					return TweetService.getFechas('2016-10-11','2016-10-30').then(function(data) {
+					return TweetService.getFechas('2016-10-24','2016-11-24').then(function(data) {
 			            return data.data;
 			        });
 				}
 			}
 		})
-		/*
-		.when("/infografias/:id", {
-			templateUrl: "views/infografias/festival.html",
-			controllerAs: "vm",
-			controller: "InfografiaShowCrtl"
-		})
-		*/
 		.otherwise({
 			redirectTo: "/home"
 		});
