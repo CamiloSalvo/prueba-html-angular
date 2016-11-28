@@ -46,6 +46,7 @@ var app = angular.module("angularSpa", [
 			return $http.get( MyConfig.urlBase + resource);
 		};
 	})
+
 	.config(function($routeProvider) {
 		$routeProvider
 		.when("/home", {
