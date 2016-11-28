@@ -94,6 +94,16 @@ var app = angular.module("angularSpa", [
 				}
 			}
 		})
+		.when("/grafos", {
+			templateUrl: "views/grafos/index.html",
+			controllerAs: "vm",
+			controller: "grafosListCtrl"
+		})
+		.when("/mapas", {
+			templateUrl: "views/mapas/index.html",
+			controllerAs: "vm",
+			controller: "mapasListCtrl"
+		})
 		.otherwise({
 			redirectTo: "/home"
 		});

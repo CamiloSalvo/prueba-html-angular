@@ -1,22 +1,21 @@
-<h1><strong>Infografias</strong></h1>
+<h1 class="text-center"><strong>Infografias</strong></h1>
 <hr>
 
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<div class="form-group">
-			<label>Seleccione Opción:</label>
-			<select class="form-control">
+			<select class="form-control" placeholder="Hey">
+				<option value="" disabled selected>Eliga una opción</option>
 				<option>Cantidad</option>
 				<option>Score</option>
 			</select>
 		</div>
 	</div>
 
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<div class="form-group">
-			<label>Fecha de Inicio:</label>
 			<div class="input-group date" id="date-picker-start">
-				<input type="text" class="form-control">
+				<input type="text" class="form-control" placeholder="Fecha de inicio">
 				<span class="input-group-addon">
 					<span class="fa fa-hashtag"></span>
 				</span>				
@@ -24,23 +23,30 @@
 		</div>
 	</div>
 
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<div class="form-group">
-			<label>Fecha de Termino:</label>
 			<div class="input-group date" id="date-picker-finish">
-				<input type="text" class="form-control">
+				<input type="text" class="form-control" placeholder="Fecha de termino">
 				<span class="input-group-addon">
 					<span class="fa fa-hashtag"></span>
 				</span>				
 			</div>
 		</div>
+	</div>
+
+	<div class="col-md-3">
+		<button class="btn btn-success btn-block">Generar</button>
 	</div>
 
 	<script type="text/javascript">
 		$(function(){
-			$('#date-picker-start').datepicker();
-			$('#date-picker-finish').datepicker();
-		})
+			$('#date-picker-start').datepicker({
+				format: "yyyy-mm-dd"
+			});
+			$('#date-picker-finish').datepicker({
+				format: "yyyy-mm-dd"
+			});
+		});
 	</script>
 </div>
 
