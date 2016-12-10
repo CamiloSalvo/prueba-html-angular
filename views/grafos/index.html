@@ -1,2 +1,26 @@
-<h1 class="text-center"><strong>Grafos</strong></h1>
+<h1 class="text-center"><strong>Usuarios Influyentes</strong></h1>
 <hr>
+
+<h2 class="text-center" ng-hide="vm.dataLoaded">
+    <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+</h2>
+
+<div class="row" ng-show="vm.dataLoaded">
+	<div class="col-md-6">
+
+		<div ng-repeat="leader in vm.leaders">
+			<h1>{{$index + 1}}.- {{leader.name}} {{leader.score}}</h1>
+			<br>
+		</div>
+
+	</div>
+	<div class="col-md-6">
+		
+	<div ng-repeat="spreader in vm.spreaders">
+			<h1>{{$index + 1}}.- {{spreader.name}} {{spreader.score}}</h1>
+			<br>
+		</div>
+
+	</div>
+</div>

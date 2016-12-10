@@ -2,13 +2,13 @@ app.controller("mapasListCtrl", function($scope){
 
 	var vm = this;
 
-	vm.coloresLolla = ['#59b5b1'];
-	vm.coloresCream = [];
-	vm.coloresFauna = [];
-	vm.coloresCumbre = [];
-	vm.coloresFrontera = [];
-	vm.coloresFiis = [];
-	vm.coloresDefqon = [];
+	vm.coloresLolla = ['#397F7B', '#469B97', '#59b5b1', '#72C0BC'];
+	vm.coloresCream = ['#B8003A' , '#E00047', '#FF0050', '#FF3374'];
+	/*vm.coloresFauna = ['#0000FE'];*/
+	/*vm.coloresCumbre = [];*/
+	/*vm.coloresFrontera = [];*/
+	/*vm.coloresFiis = [];*/
+	/*vm.coloresDefqon = [];*/
 
 	function mapa_de_calor() {
 		var mapOptions = {

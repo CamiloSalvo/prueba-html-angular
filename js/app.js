@@ -30,7 +30,34 @@ var app = angular.module("angularSpa", [
 			return $http.post( MyConfig.urlBase + resources, data);
 		};
 		this.updateResources = function(id,data){
-			return $http.put( MyConfig.url + resoources + '/' + id, data);
+			return $http.put( MyConfig.url + resources + '/' + id, data);
+		};
+	})
+	.service('UsuarioService', function($http, $q, MyConfig){
+		var resource = "usuarios";
+
+		this.getLeaders = function(){
+			var defered = $q.defer();
+			$http.get(MyConfig.urlBase + resource + '/leaders')
+			.success(function(data) {
+				defered.resolve(data);
+			})
+			.error(function(data) {
+				defered.reject(err);
+			});
+			return defered.promise;
+		};
+
+		this.getSpreaders = function() {
+			var defered = $q.defer();
+			$http.get(MyConfig.urlBase + resource + '/spreaders')
+			.success(function(data) {
+				defered.resolve(data);
+			})
+			.error(function(data) {
+				defered.reject(err);
+			});
+			return defered.promise;
 		};
 	})
 	.service('ArtistaService', function($http, MyConfig){
@@ -89,7 +116,7 @@ var app = angular.module("angularSpa", [
 			controller: "InfografiaListCtrl",
 			resolve: {
 				informacion: function(TweetService) {
-					return TweetService.getFechas('2016-10-24','2016-11-24').then(function(data) {
+					return TweetService.getFechas('2016-10-10','2016-10-20').then(function(data) {
 			            return data.data;
 			        });
 				}
