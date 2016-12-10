@@ -4,7 +4,7 @@ var app = angular.module("angularSpa", [
 	.constant('MyConfig', {
 		urlBase: 'http://localhost:8080/grupo-1-tbd/'
 	})
-	.service('TweetService', function($http, MyConfig){
+	.service('TweetService', function($http, $q, MyConfig){
 		var resource = "twitter";
 
 		this.getCount = function(){
@@ -13,6 +13,30 @@ var app = angular.module("angularSpa", [
 		this.getFechas = function(fechaInicio, fechaFin){
 			return $http.get( MyConfig.urlBase + resource + '/indices/' + fechaInicio + '/hasta/' + fechaFin);
 		};
+
+		this.getTweetsPorComuna = function() {
+			var defered = $q.defer();
+			$http.get(MyConfig.urlBase + resource + '/tweetsporcomuna')
+			.success(function(data) {
+				defered.resolve(data);
+			})
+			.error(function(data) {
+				defered.reject(err);
+			});
+			return defered.promise;
+		};
+
+		this.getTweetsPorFestivalyComuna = function() {
+			var defered = $q.defer();
+			$http.get(MyConfig.urlBase + resource + '/tweetsporfestivalcomuna')
+			.success(function(data) {
+				defered.resolve(data);
+			})
+			.error(function(data) {
+				defered.reject(err);
+			});
+			return defered.promise;
+		}
 	})
 	.service('FestivalService', function($http, MyConfig){
 		var resource = "festivales";

@@ -1,6 +1,8 @@
+/*
 .angular-google-map-container {
-  height: 500px; }
-
+    height: 500px;
+}
+*/
 .side-nav {
   position: fixed;
   height: 100%;
@@ -36,3 +38,6 @@
 .table-hover > tbody > tr:focus {
   color: black;
   background-color: #eee; }
+
+#mapa-de-calor {
+  height: 500px; }

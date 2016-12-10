@@ -1,10 +1,9 @@
-<style type="text/css">
-	#mapa-de-calor {
-		height: 500px;
-	}
-</style>
-
 <h1 class="text-center"><strong>Mapa de Santiago</strong></h1>
 <hr>
 
-<div id="mapa-de-calor"></div>
+<h2 class="text-center" ng-hide="vm.dataLoaded">
+    <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+</h2>
+
+<div id="mapa-de-calor" ng-show="vm.dataLoaded"></div>
