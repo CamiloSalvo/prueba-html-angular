@@ -2,6 +2,8 @@ app.controller("InfografiaListCtrl", function($scope, TweetService){
     var vm = this;
     vm.datos = [];
     vm.dataLoaded = false;
+    vm.fechaInicio = '';
+    vm.fechaTermino = '';
 
     TweetService.getFechas('2016-10-10', '2016-10-20')
     .then(function(data) {
@@ -40,5 +42,17 @@ app.controller("InfografiaListCtrl", function($scope, TweetService){
         enable: true,
         text: "Gráfico de Festivales"
       }
+    };
+
+    vm.test = function() {
+      console.log('test');
+      console.log('FechaInicio: ', vm.fechaInicio);
+      console.log('FechaTermino: ', vm.fechaTermino);
+      vm.dataLoaded = false;
+      TweetService.getFechas(vm.fechaInicio, vm.fechaTermino)
+      .then(function(data) {
+        vm.datos = data;
+        vm.dataLoaded = true;
+      })
     };
 });
