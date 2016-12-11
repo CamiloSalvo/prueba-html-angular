@@ -11,7 +11,15 @@ var app = angular.module("angularSpa", [
 			return $http.get( MyConfig.urlBase + resource + '/indicesContar');
 		};
 		this.getFechas = function(fechaInicio, fechaFin){
-			return $http.get( MyConfig.urlBase + resource + '/indices/' + fechaInicio + '/hasta/' + fechaFin);
+			var defered = $q.defer();
+			$http.get( MyConfig.urlBase + resource + '/indices/' + fechaInicio + '/hasta/' + fechaFin)
+			.success(function(data) {
+				defered.resolve(data);
+			})
+			.error(function(data) {
+				defered.reject(err);
+			});
+			return defered.promise;
 		};
 
 		this.getTweetsPorComuna = function() {
@@ -138,6 +146,7 @@ var app = angular.module("angularSpa", [
 			templateUrl: "views/infografias/index.html",
 			controllerAs: "vm",
 			controller: "InfografiaListCtrl",
+			/*
 			resolve: {
 				informacion: function(TweetService) {
 					return TweetService.getFechas('2016-10-10','2016-10-20').then(function(data) {
@@ -145,6 +154,7 @@ var app = angular.module("angularSpa", [
 			        });
 				}
 			}
+			*/
 		})
 		.when("/grafos", {
 			templateUrl: "views/grafos/index.html",

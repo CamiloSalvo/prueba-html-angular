@@ -1,6 +1,13 @@
 <h1 class="text-center"><strong>Infografias</strong></h1>
 <hr>
 
+<h2 class="text-center" ng-hide="vm.dataLoaded">
+    <i class="fa fa-spinner fa-spin fa-2x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+</h2>
+
+<div ng-show = "vm.dataLoaded">
+<!--
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<p>En el siguiente gráfico se utilizan diferentes métricas para obtener los datos, los cuales son:</p>
@@ -21,6 +28,8 @@
 </div>
 
 <br>
+
+-->
 
 <div class="row">
 	<div class="col-md-3">
@@ -73,4 +82,6 @@
 
 <div class="row">
     <nvd3 options="vm.options" data="vm.datos"></nvd3>
+</div>
+
 </div>

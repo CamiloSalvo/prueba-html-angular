@@ -1,17 +1,26 @@
-app.controller("InfografiaListCtrl", function(informacion, $scope, TweetService){
+app.controller("InfografiaListCtrl", function($scope, TweetService){
     var vm = this;
-    vm.datos = informacion;
+    vm.datos = [];
+    vm.dataLoaded = false;
+
+    TweetService.getFechas('2016-10-10', '2016-10-20')
+    .then(function(data) {
+      vm.datos = data;
+      vm.dataLoaded = true;
+    })
+
     vm.options = {
       chart: {
         type: "lineChart",
         height: 500,
+        width: 1120, // HAY QUE AJUSTAR ESTO A CADA PANTALLA QUE USEMOS.
         x: function(d){return d3.time.format("%Y-%m-%d").parse(d.fecha);},
         y: function(d){return d.contador;},
         margin: {
-          top: 20,
-          right: 20,
-          bottom: 40,
-          left: 55
+          top: 0,
+          right: 35,
+          bottom: 70,
+          left: 70
         },
         useInteractiveGuideline: true,
         dispatch: {},
@@ -20,7 +29,7 @@ app.controller("InfografiaListCtrl", function(informacion, $scope, TweetService)
           return d3.time.format('%Y-%m-%d')(d)
           }),
           ticks: 5,
-          axisLabel: "Fechas (Dia)"
+          axisLabel: "Fechas (Día)"
         },
         xScale: d3.time.scale(),
         yAxis: {
