@@ -2,6 +2,9 @@ app.controller("mapasListCtrl", function($scope, TweetService){
 
 	var vm = this;
 	vm.dataLoaded = false;
+	vm.comunaClickeada = "Santiago";
+	vm.mostrarTodos = true;
+	vm.mostrarFestival = false;
 
 	vm.geoDatosTodos = [];
 	vm.geoDatosLolla = [];
@@ -12,6 +15,7 @@ app.controller("mapasListCtrl", function($scope, TweetService){
 	vm.geoDatosFiis = [];
 	vm.geoDatosDefqon = [];
 
+	vm.datosParaMostrar = [];
 
 	// más obscuro, menos valor
 	vm.coloresTodos = [];
@@ -63,6 +67,11 @@ app.controller("mapasListCtrl", function($scope, TweetService){
 				strokeColor: '#FFFFFF'
 			};
 		});
+
+		vm.map.data.addListener('click', function(e) {
+			vm.comunaClickeada = e.feature.getProperty('NOM_COM');
+			console.log(vm.comunaClickeada);
+		})
 	}
 
 	function getMax(arreglo, parametro) {
@@ -105,7 +114,6 @@ app.controller("mapasListCtrl", function($scope, TweetService){
 	vm.updateMap = function() {
 		vm.filterSelected = vm.filterSelected;
 		vm.festivalSelected = vm.festivalSelected;
-		console.log(vm.festivalSelected);
 		vm.map.data.setStyle(function(feature) {
 			var color = getColor(feature.getProperty('NOM_COM'), vm.filterSelected, vm.festivalSelected);
 			return {
