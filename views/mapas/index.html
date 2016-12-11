@@ -6,4 +6,35 @@
     <span class="sr-only">Loading...</span>
 </h2>
 
-<div id="mapa-de-calor" ng-show="vm.dataLoaded"></div>
+<div ng-show="vm.dataLoaded">
+
+	<div class="row">
+		<div class="col-md-3 col-md-offset-3">
+			<form class="form-group">
+				<label for="selectFilter">Seleccione Filtro:</label>
+				<select class="form-control" name="selectFilter" ng-model="vm.filterSelected" ng-change="vm.updateMap()">
+					<option value="tweets">Cantidad</option>
+					<option value="emoteScoreAvg">Score</option>
+				</select>
+			</form>
+		</div>
+		<div class="col-md-3">
+			<form class="form-group">
+				<label for="selectFestival">Seleccione Festival:</label>
+				<select class="form-control" name="selectFestival" ng-model="vm.festivalSelected" ng-change="vm.updateMap()">
+					<option value="todos">Todos</option>
+					<option value="lolla">Lollapalooza</option>
+					<option value="cream">Creamfields</option>
+					<option value="fauna">Fauna Primavera</option>
+					<option value="cumbre">Cumbre del Rock Chileno</option>
+					<option value="frontera">Frontera</option>
+					<option value="fiis">FiiS</option>
+					<option value="defqon">Defqon.1</option>
+				</select>
+			</form>
+		</div>
+	</div>
+
+	<div id="mapa-de-calor"></div>
+
+</div>
