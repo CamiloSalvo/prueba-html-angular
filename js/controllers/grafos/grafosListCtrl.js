@@ -3,6 +3,8 @@ app.controller("grafosListCtrl", function($scope, UsuarioService){
 	vm.dataLoaded = false;
 	vm.leaders = [];
 	vm.spreaders = [];
+	vm.showSpreader = false;
+	vm.showLeader = false;
 
 	UsuarioService.getLeaders()
 	.then(function(data) {
@@ -13,4 +15,14 @@ app.controller("grafosListCtrl", function($scope, UsuarioService){
 			vm.dataLoaded = true;
 		})
 	})
+
+	vm.spreaders = function() {
+		vm.showSpreader = true;
+		vm.showLeader = false;
+	};
+
+	vm.leaders = function() {
+		vm.showSpreader = false;
+		vm.showLeader = true;
+	};
 });
