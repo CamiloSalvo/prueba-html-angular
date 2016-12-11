@@ -34,8 +34,7 @@
 <div class="row">
 	<div class="col-md-3">
 		<div class="form-group">
-			<select class="form-control" placeholder="Hey">
-				<option value="" disabled selected>Eliga una opción</option>
+			<select class="form-control" placeholder="Hey" ng-model="vm.selectTipo">
 				<option>Cantidad</option>
 				<option>Score</option>
 			</select>
@@ -80,8 +79,13 @@
 	</script>
 </div>
 
-<div class="row">
+<div class="row" ng-show="vm.selectTipo=='Cantidad'">
     <nvd3 options="vm.options" data="vm.datos"></nvd3>
+</div>
+
+
+<div class="row" ng-show="vm.selectTipo=='Score'">
+    <nvd3 options="vm.options2" data="vm.datos"></nvd3>
 </div>
 
 </div>
