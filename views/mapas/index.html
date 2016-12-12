@@ -40,11 +40,23 @@
 	<br>
 
 	<div class="row text-center" ng-show = "vm.mostrarTodos">
-		<h3>{{vm.comunaClickeada}}</h3>
+		<h3 ng-model = "vm.comunaClickeada" ng-bind = "vm.comunaClickeada"></h3>
+		<hr>
+		<h4>Total por comuna: {{vm.mostrarParaTodos[0].tweets}} {{vm.mostrarParaTodos[0].emoteScoreAvg}}</h4>
+		<h4>Lollapalooza: {{vm.mostrarParaTodos[1].tweets}} {{vm.mostrarParaTodos[1].emoteScoreAvg}}</h4>
+		<h4>Creamfields: {{vm.mostrarParaTodos[2].tweets}} {{vm.mostrarParaTodos[2].emoteScoreAvg}}</h4>
+		<h4>Fauna Primavera: {{vm.mostrarParaTodos[3].tweets}} {{vm.mostrarParaTodos[3].emoteScoreAvg}}</h4>
+		<h4>Cumbre del Rock Chileno:{{vm.mostrarParaTodos[4].tweets}} {{vm.mostrarParaTodos[4].emoteScoreAvg}}</h4>
+		<h4>Frontera: {{vm.mostrarParaTodos[5].tweets}} {{vm.mostrarParaTodos[5].emoteScoreAvg}}</h4>
+		<h4>FiiS: {{vm.mostrarParaTodos[6].tweets}} {{vm.mostrarParaTodos[6].emoteScoreAvg}}</h4>
+		<h4>Defqon.1: {{vm.mostrarParaTodos[7].tweets}} {{vm.mostrarParaTodos[7].emoteScoreAvg}}</h4>
 	</div>
 
 	<div class="row text-center" ng-show = "vm.mostrarFestival">
-		<h3>Mostrar datos de cierta comuna cuando se revisa sólo 1 festival</h3>
+		<h3 ng-model = "vm.comunaClickeada" ng-bind = "vm.comunaClickeada"></h3>
+		<hr>
+		<h4>Total por comuna: {{vm.mostrarParaTodos[0].tweets}} {{vm.mostrarParaTodos[0].emoteScoreAvg}}</h4>
+		<h4>{{vm.festivalSelected}}: {{vm.mostrarParaFestival.tweets}} {{vm.mostrarParaFestival.emoteScoreAvg}}</h4>
 	</div>
 
 </div>

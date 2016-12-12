@@ -68,7 +68,7 @@ var app = angular.module("angularSpa", [
 	.service('UsuarioService', function($http, $q, MyConfig){
 		var resource = "usuarios";
 
-		this.getLeaders = function(){
+		this.getLeaders = function() {
 			var defered = $q.defer();
 			$http.get(MyConfig.urlBase + resource + '/leaders')
 			.success(function(data) {

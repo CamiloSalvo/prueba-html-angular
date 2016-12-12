@@ -3,7 +3,7 @@ app.controller("mapasListCtrl", function($scope, TweetService){
 	var vm = this;
 	vm.dataLoaded = false;
 	vm.comunaClickeada = "Santiago";
-	vm.mostrarTodos = true;
+	vm.mostrarTodos = false;
 	vm.mostrarFestival = false;
 
 	vm.geoDatosTodos = [];
@@ -15,7 +15,9 @@ app.controller("mapasListCtrl", function($scope, TweetService){
 	vm.geoDatosFiis = [];
 	vm.geoDatosDefqon = [];
 
-	vm.datosParaMostrar = [];
+	vm.mostrarParaTodos = [];
+
+	vm.mostrarParaFestival = [];
 
 	// más obscuro, menos valor
 	vm.coloresTodos = [];
@@ -70,8 +72,87 @@ app.controller("mapasListCtrl", function($scope, TweetService){
 
 		vm.map.data.addListener('click', function(e) {
 			vm.comunaClickeada = e.feature.getProperty('NOM_COM');
-			console.log(vm.comunaClickeada);
-		})
+			if (vm.festivalSelected == "todos") {
+				vm.mostrarFestival = false;
+				getDatosComunaTodos(vm.comunaClickeada);
+				vm.mostrarTodos = true;
+			}
+			else {
+				vm.mostrarTodos = false;
+				getDatosComunaTodos(vm.comunaClickeada);
+				var i = getDatosFestival();
+				vm.mostrarParaFestival = vm.mostrarParaTodos[i];
+				vm.mostrarFestival = true;
+			}
+			$scope.$apply(); // Actualiza el valor asignado anteriormente
+		});
+	}
+
+	function getDatosFestival() {
+		if (vm.festivalSelected == "lolla") return 1;
+		else if (vm.festivalSelected == "cream") return 2;
+		else if (vm.festivalSelected == "fauna") return 3;
+		else if (vm.festivalSelected == "cumbre") return 4;
+		else if (vm.festivalSelected == "frontera") return 5;
+		else if (vm.festivalSelected == "fiis") return 6;
+		else if (vm.festivalSelected == "defqon") return 7;
+	}
+
+	function getDatosComunaTodos(comuna) {
+		for (var i = 0; i < vm.geoDatosTodos.length; i++) {
+			if (comuna == vm.geoDatosTodos[i].nombre) {
+				var todos = {
+					'tweets': vm.geoDatosTodos[i].tweets,
+					'emoteScoreAvg': vm.geoDatosTodos[i].emoteScoreAvg
+				};
+			}
+			if (comuna == vm.geoDatosLolla[i].nombre) {
+				var lolla = {
+					'tweets': vm.geoDatosLolla[i].tweets,
+					'emoteScoreAvg': vm.geoDatosLolla[i].emoteScoreAvg
+				};
+			}
+			if (comuna == vm.geoDatosCream[i].nombre) {
+				var cream = {
+					'tweets': vm.geoDatosCream[i].tweets,
+					'emoteScoreAvg': vm.geoDatosCream[i].emoteScoreAvg
+				};
+			}
+			if (comuna == vm.geoDatosFauna[i].nombre) {
+				var fauna = {
+					'tweets': vm.geoDatosFauna[i].tweets,
+					'emoteScoreAvg': vm.geoDatosFauna[i].emoteScoreAvg
+				};
+			}
+			if (comuna == vm.geoDatosCumbre[i].nombre) {
+				var cumbre = {
+					'tweets': vm.geoDatosCumbre[i].tweets,
+					'emoteScoreAvg': vm.geoDatosCumbre[i].emoteScoreAvg
+				};
+			}
+			if (comuna == vm.geoDatosFrontera[i].nombre) {
+				var frontera = {
+					'tweets': vm.geoDatosFrontera[i].tweets,
+					'emoteScoreAvg': vm.geoDatosFrontera[i].emoteScoreAvg
+				};
+			}
+			if (comuna == vm.geoDatosFiis[i].nombre) {
+				var fiis = {
+					'tweets': vm.geoDatosFiis[i].tweets,
+					'emoteScoreAvg': vm.geoDatosFiis[i].emoteScoreAvg
+				};
+			}
+			if (comuna == vm.geoDatosDefqon[i].nombre) {
+				var defqon = {
+					'tweets': vm.geoDatosDefqon[i].tweets,
+					'emoteScoreAvg': vm.geoDatosDefqon[i].emoteScoreAvg
+				};
+			}
+
+		}
+		var datos = [todos, lolla, cream, fauna, cumbre, frontera, fiis, defqon];
+		console.log(datos);
+		vm.mostrarParaTodos = datos;
 	}
 
 	function getMax(arreglo, parametro) {
@@ -123,4 +204,5 @@ app.controller("mapasListCtrl", function($scope, TweetService){
 			};
 		});
 	}
+
 });
