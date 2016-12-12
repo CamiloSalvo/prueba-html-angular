@@ -89,13 +89,13 @@ app.controller("mapasListCtrl", function($scope, TweetService){
 	}
 
 	function getDatosFestival() {
-		if (vm.festivalSelected == "lolla") return 1;
-		else if (vm.festivalSelected == "cream") return 2;
-		else if (vm.festivalSelected == "fauna") return 3;
-		else if (vm.festivalSelected == "cumbre") return 4;
-		else if (vm.festivalSelected == "frontera") return 5;
-		else if (vm.festivalSelected == "fiis") return 6;
-		else if (vm.festivalSelected == "defqon") return 7;
+		if (vm.festivalSelected == "Lollapalooza") return 1;
+		else if (vm.festivalSelected == "Creamfields") return 2;
+		else if (vm.festivalSelected == "Fauna Primavera") return 3;
+		else if (vm.festivalSelected == "Cumbre del Rock Chileno") return 4;
+		else if (vm.festivalSelected == "Frontera") return 5;
+		else if (vm.festivalSelected == "FiiS") return 6;
+		else if (vm.festivalSelected == "Defqon.1") return 7;
 	}
 
 	function getDatosComunaTodos(comuna) {
