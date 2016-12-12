@@ -41,3 +41,13 @@
 
 #mapa-de-calor {
   height: 500px; }
+
+.grad-leyenda {
+  color: white;
+  color: -webkit-linear-gradient(left, white, black);
+  color: -moz-linear-gradient(right, white, black);
+  color: linear-gradient(to right, white, black);
+  background: #204644;
+  background: -webkit-linear-gradient(left, #204644, #8ECCC9);
+  background: -moz-linear-gradient(right, #204644, #8ECCC9);
+  background: linear-gradient(to right, #204644, #8ECCC9); }
