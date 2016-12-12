@@ -1,3 +1,4 @@
+$("#modal").modal();
 app.controller("mapasListCtrl", function($scope, TweetService){
 
 	var vm = this;
@@ -84,6 +85,8 @@ app.controller("mapasListCtrl", function($scope, TweetService){
 				vm.mostrarParaFestival = vm.mostrarParaTodos[i];
 				vm.mostrarFestival = true;
 			}
+
+			$("#modal").modal('show');
 			$scope.$apply(); // Actualiza el valor asignado anteriormente
 		});
 	}

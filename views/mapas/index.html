@@ -39,24 +39,143 @@
 
 	<br>
 
-	<div class="row text-center" ng-show = "vm.mostrarTodos">
-		<h3 ng-model = "vm.comunaClickeada" ng-bind = "vm.comunaClickeada"></h3>
-		<hr>
-		<h4>Total por comuna: {{vm.mostrarParaTodos[0].tweets}} {{vm.mostrarParaTodos[0].emoteScoreAvg}}</h4>
-		<h4>Lollapalooza: {{vm.mostrarParaTodos[1].tweets}} {{vm.mostrarParaTodos[1].emoteScoreAvg}}</h4>
-		<h4>Creamfields: {{vm.mostrarParaTodos[2].tweets}} {{vm.mostrarParaTodos[2].emoteScoreAvg}}</h4>
-		<h4>Fauna Primavera: {{vm.mostrarParaTodos[3].tweets}} {{vm.mostrarParaTodos[3].emoteScoreAvg}}</h4>
-		<h4>Cumbre del Rock Chileno:{{vm.mostrarParaTodos[4].tweets}} {{vm.mostrarParaTodos[4].emoteScoreAvg}}</h4>
-		<h4>Frontera: {{vm.mostrarParaTodos[5].tweets}} {{vm.mostrarParaTodos[5].emoteScoreAvg}}</h4>
-		<h4>FiiS: {{vm.mostrarParaTodos[6].tweets}} {{vm.mostrarParaTodos[6].emoteScoreAvg}}</h4>
-		<h4>Defqon.1: {{vm.mostrarParaTodos[7].tweets}} {{vm.mostrarParaTodos[7].emoteScoreAvg}}</h4>
-	</div>
+	<div id="modal" class="modal fade" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <center><h4 class="modal-title" ng-model = "vm.comunaClickeada" ng-bind = "vm.comunaClickeada"></h4></center>
+	      </div>
+	      <div class="modal-body">
+	      	<table class="table">
+	      		<thead>
+	      			<th> Festival</th>
+	      			<th ng-show="vm.filterSelected=='tweets'"> Cantidad</th>
+	      			<th ng-show="vm.filterSelected=='emoteScoreAvg'"> Emote</th>
+	      		</thead>
+		        <tbody ng-show = "vm.mostrarTodos">
+					<tr>
+						<td>
+							Total por comuna: 
+						</td>
+						<td ng-show="vm.filterSelected=='tweets'">
+							{{vm.mostrarParaTodos[0].tweets}}
+						</td>
+						<td ng-show="vm.filterSelected=='emoteScoreAvg'">
+							{{vm.mostrarParaTodos[0].emoteScoreAvg}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Lollapalooza: 
+						</td>
+						<td ng-show="vm.filterSelected=='tweets'">
+							{{vm.mostrarParaTodos[1].tweets}}
+						</td>
+						<td ng-show="vm.filterSelected=='emoteScoreAvg'">
+							{{vm.mostrarParaTodos[1].emoteScoreAvg}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Creamfields: 
+						</td>
+						<td ng-show="vm.filterSelected=='tweets'">
+							{{vm.mostrarParaTodos[2].tweets}}
+						</td>
+						<td ng-show="vm.filterSelected=='emoteScoreAvg'">
+							{{vm.mostrarParaTodos[2].emoteScoreAvg}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Fauna: 
+						</td>
+						<td ng-show="vm.filterSelected=='tweets'">
+							{{vm.mostrarParaTodos[3].tweets}}
+						</td>
+						<td ng-show="vm.filterSelected=='emoteScoreAvg'">
+							{{vm.mostrarParaTodos[3].emoteScoreAvg}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Cumbre del Rock Chileno: 
+						</td>
+						<td ng-show="vm.filterSelected=='tweets'">
+							{{vm.mostrarParaTodos[4].tweets}}
+						</td>
+						<td ng-show="vm.filterSelected=='emoteScoreAvg'">
+							{{vm.mostrarParaTodos[4].emoteScoreAvg}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Frontera: 
+						</td>
+						<td ng-show="vm.filterSelected=='tweets'">
+							{{vm.mostrarParaTodos[5].tweets}}
+						</td>
+						<td ng-show="vm.filterSelected=='emoteScoreAvg'">
+							{{vm.mostrarParaTodos[5].emoteScoreAvg}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							FiiS: 
+						</td>
+						<td ng-show="vm.filterSelected=='tweets'">
+							{{vm.mostrarParaTodos[6].tweets}}
+						</td>
+						<td ng-show="vm.filterSelected=='emoteScoreAvg'">
+							{{vm.mostrarParaTodos[6].emoteScoreAvg}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Defqon.1: 
+						</td>
+						<td ng-show="vm.filterSelected=='tweets'">
+							{{vm.mostrarParaTodos[7].tweets}}
+						</td>
+						<td ng-show="vm.filterSelected=='emoteScoreAvg'">
+							{{vm.mostrarParaTodos[7].emoteScoreAvg}}
+						</td>
+					</tr>
+				</tbody>
 
-	<div class="row text-center" ng-show = "vm.mostrarFestival">
-		<h3 ng-model = "vm.comunaClickeada" ng-bind = "vm.comunaClickeada"></h3>
-		<hr>
-		<h4>Total por comuna: {{vm.mostrarParaTodos[0].tweets}} {{vm.mostrarParaTodos[0].emoteScoreAvg}}</h4>
-		<h4>{{vm.festivalSelected}}: {{vm.mostrarParaFestival.tweets}} {{vm.mostrarParaFestival.emoteScoreAvg}}</h4>
-	</div>
+				<tbody ng-show = "vm.mostrarFestival">
+					<tr>
+						<td>
+							Total por comuna: 
+						</td>
+						<td ng-show="vm.filterSelected=='tweets'">
+							{{vm.mostrarParaTodos[0].tweets}}
+						</td>
+						<td ng-show="vm.filterSelected=='emoteScoreAvg'">
+							{{vm.mostrarParaTodos[0].emoteScoreAvg}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							{{vm.festivalSelected}}: 
+						</td>
+						<td ng-show="vm.filterSelected=='tweets'">
+							{{vm.mostrarParaFestival.tweets}}
+						</td>
+						<td ng-show="vm.filterSelected=='emoteScoreAvg'">
+							{{vm.mostrarParaFestival.emoteScoreAvg}}
+						</td>
+					</tr>
+				</tbody>
+	      	</table>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
 </div>
